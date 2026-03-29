@@ -1,0 +1,35 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "participant_emails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails of participants"
+    },
+    "participant_names": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Names of participants"
+    },
+    "last_message": {
+      "type": "string",
+      "description": "Preview of last message"
+    },
+    "last_message_time": {
+      "type": "string",
+      "description": "Timestamp of last message"
+    },
+    "last_message_sender": {
+      "type": "string",
+      "description": "Email of last message sender"
+    }
+  },
+  "required": [
+    "participant_emails"
+  ]
+}

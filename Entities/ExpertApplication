@@ -1,0 +1,64 @@
+{
+    "name": "ExpertApplication",
+    "type": "object",
+    "properties": {
+      "user_email": {
+        "type": "string",
+        "description": "Email of the applicant"
+      },
+      "full_name": {
+        "type": "string",
+        "description": "Full name"
+      },
+      "expertise_area": {
+        "type": "string",
+        "enum": [
+          "health",
+          "science",
+          "politics",
+          "legal",
+          "journalism",
+          "technology",
+          "finance",
+          "education",
+          "other"
+        ],
+        "description": "Area of expertise"
+      },
+      "organization": {
+        "type": "string",
+        "description": "Organization or affiliation"
+      },
+      "linkedin_url": {
+        "type": "string",
+        "description": "LinkedIn profile URL"
+      },
+      "verification_reason": {
+        "type": "string",
+        "description": "Why they should be verified"
+      },
+      "supporting_docs": {
+        "type": "string",
+        "description": "URL to supporting documents"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "approved",
+          "rejected"
+        ],
+        "description": "Application status"
+      },
+      "expert_badge": {
+        "type": "string",
+        "description": "Badge label e.g. Verified Health Contributor"
+      }
+    },
+    "required": [
+      "user_email",
+      "full_name",
+      "expertise_area",
+      "verification_reason"
+    ]
+  }

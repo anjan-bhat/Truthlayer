@@ -1,0 +1,115 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "author_email": {
+      "type": "string",
+      "description": "Email of the post author"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the author"
+    },
+    "author_photo": {
+      "type": "string",
+      "description": "Profile photo URL of the author"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "image",
+        "video",
+        "mixed"
+      ],
+      "description": "Type of content"
+    },
+    "text_content": {
+      "type": "string",
+      "description": "Text body of the post"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Caption for the post"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL of uploaded media"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "politics",
+        "health",
+        "science",
+        "sports",
+        "entertainment",
+        "local_news",
+        "technology",
+        "finance",
+        "global_events",
+        "education",
+        "social_issues",
+        "other"
+      ],
+      "description": "Post category"
+    },
+    "ai_detected_type": {
+      "type": "string",
+      "enum": [
+        "news",
+        "rumor",
+        "opinion",
+        "satire",
+        "misleading",
+        "verified",
+        "not_enough_evidence",
+        "pending"
+      ],
+      "description": "AI-detected content type"
+    },
+    "ai_credibility_label": {
+      "type": "string",
+      "description": "AI credibility analysis summary"
+    },
+    "ai_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-extracted tags"
+    },
+    "ai_summary": {
+      "type": "string",
+      "description": "AI-generated summary"
+    },
+    "avg_rating": {
+      "type": "number",
+      "description": "Average community rating"
+    },
+    "rating_count": {
+      "type": "number",
+      "description": "Number of ratings"
+    },
+    "expert_avg_rating": {
+      "type": "number",
+      "description": "Average expert rating"
+    },
+    "expert_rating_count": {
+      "type": "number",
+      "description": "Number of expert ratings"
+    },
+    "comment_count": {
+      "type": "number",
+      "description": "Number of comments"
+    },
+    "is_flagged": {
+      "type": "boolean",
+      "description": "Whether the post is flagged for moderation"
+    }
+  },
+  "required": [
+    "author_email",
+    "content_type"
+  ]
+}

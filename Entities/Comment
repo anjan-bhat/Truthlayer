@@ -1,0 +1,42 @@
+{
+  "name": "Comment",
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "description": "ID of the post"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the comment author"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Name of the comment author"
+    },
+    "parent_comment_id": {
+      "type": "string",
+      "description": "ID of parent comment for replies"
+    },
+    "comment_type": {
+      "type": "string",
+      "enum": [
+        "comment",
+        "evidence",
+        "expert_note",
+        "context"
+      ],
+      "description": "Type of comment"
+    },
+    "content": {
+      "type": "string",
+      "description": "Comment text content"
+    }
+  },
+  "required": [
+    "post_id",
+    "author_email",
+    "content",
+    "comment_type"
+  ]
+}

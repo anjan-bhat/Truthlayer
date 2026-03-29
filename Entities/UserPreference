@@ -1,0 +1,53 @@
+{
+  "name": "UserPreference",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "preferred_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categories the user wants to see"
+    },
+    "avoided_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categories to avoid"
+    },
+    "content_preference": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "trending",
+        "balanced"
+      ],
+      "description": "Content preference type"
+    },
+    "follow_experts": {
+      "type": "boolean",
+      "description": "Whether to follow expert content"
+    },
+    "notification_frequency": {
+      "type": "string",
+      "enum": [
+        "all",
+        "important",
+        "minimal"
+      ],
+      "description": "Notification preference"
+    },
+    "onboarding_complete": {
+      "type": "boolean",
+      "description": "Whether onboarding is complete"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
