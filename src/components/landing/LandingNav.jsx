@@ -2,6 +2,7 @@ import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
+import { startHostedLogin } from "@/lib/auth-flow";
 
 export default function LandingNav() {
   const handleEnter = async () => {
@@ -9,7 +10,7 @@ export default function LandingNav() {
     if (authed) {
       window.location.href = "/feed";
     } else {
-      base44.auth.redirectToLogin("/feed");
+      startHostedLogin("/feed");
     }
   };
   return (

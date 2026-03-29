@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { base44 } from "@/api/base44Client";
+import { startHostedLogin } from "@/lib/auth-flow";
 
 export default function CTASection() {
   const handleEnter = async () => {
     const authed = await base44.auth.isAuthenticated();
     if (authed) window.location.href = "/feed";
-    else base44.auth.redirectToLogin("/feed");
+    else startHostedLogin("/feed");
   };
   return (
     <section className="py-32 px-6 relative">

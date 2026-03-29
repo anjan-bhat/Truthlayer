@@ -18,6 +18,7 @@ import Settings from './pages/Settings';
 import Admin from './pages/Admin';
 import Messages from './pages/Messages';
 import Chat from './pages/Chat';
+import LoginRedirect from './pages/LoginRedirect';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -69,7 +70,10 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
-          <AuthenticatedApp />
+          <Routes>
+            <Route path="/login" element={<LoginRedirect />} />
+            <Route path="*" element={<AuthenticatedApp />} />
+          </Routes>
         </Router>
         <Toaster />
       </QueryClientProvider>

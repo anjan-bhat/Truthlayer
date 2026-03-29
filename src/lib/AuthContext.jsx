@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { appParams } from '@/lib/app-params';
 import { createAxiosClient } from '@base44/sdk/dist/utils/axios-client';
+import { startHostedLogin } from '@/lib/auth-flow';
 
 const AuthContext = createContext();
 
@@ -124,8 +125,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const navigateToLogin = () => {
-    // Use the SDK's redirectToLogin method
-    base44.auth.redirectToLogin(window.location.href);
+    const path = `${window.location.pathname}${window.location.search}`;
+    startHostedLogin(path || '/feed');
   };
 
   return (
