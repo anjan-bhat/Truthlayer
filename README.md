@@ -17,12 +17,16 @@ A **credibility-focused social feed** where posts can be analyzed for trust sign
 ## Scripts (from repo root)
 
 ```bash
-cd frontend && npm install   # first time, or after dependency changes
-npm run dev --prefix frontend    # or: cd frontend && npm run dev
-npm run build --prefix frontend
+npm install --prefix frontend   # first time, or after dependency changes
+npm run dev                     # runs Vite inside frontend/
+npm run build
 ```
 
 Configure **`frontend/.env`** (see `frontend/.env.example`): `VITE_BASE44_APP_ID`, optional `VITE_BASE44_APP_BASE_URL`.
+
+## Troubleshooting
+
+- **404 on `http://localhost:5173`:** Usually an **old** Vite/Node process is still bound to 5173 from before the app lived in `frontend/`. Stop all dev servers (Ctrl+C), then run `npm run dev` from the **repo root** and open the **URL Vite prints** (if 5173 is busy, it will be 5174, 5175, …).
 
 ## License
 
