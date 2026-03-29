@@ -3,7 +3,7 @@ import HeroSection from "../components/landing/HeroSection";
 import WhyDifferentSection from "../components/landing/WhyDifferentSection";
 import PillarsSection from "../components/landing/PillarsSection";
 import HowItWorksSection from "../components/landing/HowItWorksSection";
-import ExpertsSection from "../components/landing/ExpertsSection";
+import ExpertsSection from "../components/landing/ExpertSection";
 import CTASection from "../components/landing/CTASection";
 import { Shield } from "lucide-react";
 

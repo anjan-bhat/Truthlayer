@@ -3,8 +3,8 @@ import { TrendingUp, Eye, Heart, Shield } from "lucide-react";
 
 export default function WhyDifferentSection() {
   return (
-    <section className="py-32 px-6 relative">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-32 px-4 sm:px-6 relative">
+      <div className="max-w-5xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export default function WhyDifferentSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           <ComparisonCard
             icon={<TrendingUp className="w-5 h-5" />}
             label="Traditional Social Media"
@@ -81,7 +81,7 @@ function ComparisonCard({ icon, label, title, description, variant, delay }) {
         {icon}
         {label}
       </div>
-      <h3 className={`text-xl font-heading font-700 mb-3 ${isNew ? "text-foreground" : "text-muted-foreground"}`}>
+      <h3 className="text-xl font-heading font-700 mb-3 text-foreground">
         {title}
       </h3>
       <p className="text-muted-foreground leading-relaxed">{description}</p>

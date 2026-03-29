@@ -10,7 +10,7 @@ export default function HeroSection({ heroImage }) {
     else base44.auth.redirectToLogin("/feed");
   };
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-24 pb-12">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-truth-cyan/5 blur-[120px]" />
