@@ -3,7 +3,7 @@ import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Send, Loader2 } from "lucide-react";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 import { cn } from "@/lib/utils";
 
 export default function Chat() {
@@ -99,7 +99,7 @@ export default function Chat() {
                 )}>
                   <p>{msg.content}</p>
                   <p className={cn("text-[10px] mt-1 font-mono", isMe ? "text-primary-foreground/60 text-right" : "text-muted-foreground")}>
-                    {moment(msg.created_date).format("h:mm A")}
+                    {localMoment(msg.created_date).format("h:mm A")}
                   </p>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BadgeCheck, Flag, AlertTriangle, Loader2, Check, X } from "lucide-react";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 export default function Admin() {
   const { user } = useOutletContext();
@@ -120,7 +120,7 @@ export default function Admin() {
                     <p className="text-xs text-muted-foreground">{app.user_email} · {app.organization}</p>
                     {app.linkedin_url && <a href={app.linkedin_url} target="_blank" className="text-[10px] text-primary hover:underline">LinkedIn</a>}
                     <p className="text-xs text-foreground/80 mt-2">{app.verification_reason}</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">{moment(app.created_date).fromNow()}</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">{localMoment(app.created_date).fromNow()}</p>
                   </div>
                   {app.status === "pending" && (
                     <div className="flex gap-2 ml-4">
@@ -156,7 +156,7 @@ export default function Admin() {
                     <p className="text-xs text-muted-foreground">Reported: {report.reported_user_email}</p>
                     <p className="text-xs text-muted-foreground">By: {report.reporter_email}</p>
                     <p className="text-xs text-foreground/80 mt-2">{report.description}</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">{moment(report.created_date).fromNow()}</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">{localMoment(report.created_date).fromNow()}</p>
                   </div>
                   {report.status === "pending" && (
                     <div className="flex gap-2 ml-4">
@@ -181,7 +181,7 @@ export default function Admin() {
             ) : flaggedPosts.map(post => (
               <div key={post.id} className="glass rounded-xl border border-border/30 p-4">
                 <p className="text-sm font-medium">{post.text_content?.slice(0, 100) || "Media post"}</p>
-                <p className="text-xs text-muted-foreground mt-1">By: {post.author_email} · {moment(post.created_date).fromNow()}</p>
+                <p className="text-xs text-muted-foreground mt-1">By: {post.author_email} · {localMoment(post.created_date).fromNow()}</p>
                 <p className="text-xs text-muted-foreground">Type: {post.ai_detected_type}</p>
               </div>
             ))}

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import PostTypeTag from "./PostTypeTag";
 import RatingStars from "./RatingStars";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 export default function FeedCard({ post, user, onRatingUpdate }) {
   const navigate = useNavigate();
@@ -87,7 +87,7 @@ export default function FeedCard({ post, user, onRatingUpdate }) {
             </div>
             <span className="text-[11px] text-muted-foreground font-mono flex items-center gap-1">
               <Clock className="w-3 h-3" />
-              {moment(post.created_date).calendar(null, {
+              {localMoment(post.created_date).calendar(null, {
                 sameDay: '[Today at] h:mm A',
                 lastDay: '[Yesterday at] h:mm A',
                 lastWeek: 'MMM D [at] h:mm A',

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { MessageCircle, Loader2 } from "lucide-react";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 export default function Messages() {
   const { user } = useOutletContext();
@@ -59,7 +59,7 @@ export default function Messages() {
                 </div>
                 {conv.last_message_time && (
                   <span className="text-[10px] text-muted-foreground font-mono flex-shrink-0">
-                    {moment(conv.last_message_time).format("MMM D")}
+                    {localMoment(conv.last_message_time).format("MMM D")}
                   </span>
                 )}
               </button>

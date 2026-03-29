@@ -4,7 +4,7 @@ import { base44 } from "@/api/base44Client";
 import { Bell, Star, MessageSquare, BadgeCheck, TrendingUp, Clock, Loader2, CheckCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 const TYPE_ICONS = {
   rating: Star,
@@ -102,7 +102,7 @@ export default function Notifications() {
                     <p className="text-sm font-medium">{notif.title}</p>
                     <p className="text-xs text-muted-foreground mt-0.5">{notif.message}</p>
                     <span className="text-[10px] text-muted-foreground font-mono mt-1 block">
-                      {moment(notif.created_date).fromNow()}
+                      {localMoment(notif.created_date).fromNow()}
                     </span>
                   </div>
                   {!notif.is_read && (

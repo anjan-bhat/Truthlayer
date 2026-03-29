@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { BadgeCheck, Send, MessageSquare, FileText, BookOpen, Reply, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 const TABS = [
   { key: "comment", label: "Comments", icon: MessageSquare },
@@ -59,7 +59,7 @@ function CommentItem({ comment, user, onReply }) {
           <BadgeCheck className="w-3 h-3 text-truth-mint" />
         )}
         <span className="text-[10px] text-muted-foreground ml-auto font-mono">
-          {moment(comment.created_date).fromNow()}
+          {localMoment(comment.created_date).fromNow()}
         </span>
       </div>
       <p className="text-sm text-foreground/90 leading-relaxed">{comment.content}</p>
@@ -113,7 +113,7 @@ function CommentItem({ comment, user, onReply }) {
                   {reply.author_name?.[0]?.toUpperCase() || "A"}
                 </div>
                 <span className="text-[11px] font-semibold">{reply.author_name || "Anonymous"}</span>
-                <span className="text-[10px] text-muted-foreground ml-auto font-mono">{moment(reply.created_date).fromNow()}</span>
+                <span className="text-[10px] text-muted-foreground ml-auto font-mono">{localMoment(reply.created_date).fromNow()}</span>
               </div>
               <p className="text-xs text-foreground/85 leading-relaxed">{reply.content}</p>
             </div>

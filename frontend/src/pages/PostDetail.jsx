@@ -5,7 +5,7 @@ import { ArrowLeft, BadgeCheck, Clock, Tag, Loader2, Sparkles } from "lucide-rea
 import PostTypeTag from "../components/feed/PostTypeTag";
 import RatingStars from "../components/feed/RatingStars";
 import CommentSection from "../components/feed/CommentSection";
-import moment from "moment";
+import { localMoment } from "@/lib/time";
 
 export default function PostDetail() {
   const { id } = useParams();
@@ -104,7 +104,7 @@ export default function PostDetail() {
                 {post.is_expert && <BadgeCheck className="w-4 h-4 text-truth-mint" />}
               </div>
               <span className="text-xs text-muted-foreground font-mono flex items-center gap-1">
-                <Clock className="w-3 h-3" /> {moment(post.created_date).fromNow()}
+                <Clock className="w-3 h-3" /> {localMoment(post.created_date).fromNow()}
               </span>
             </div>
           </Link>
