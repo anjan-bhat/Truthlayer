@@ -1,0 +1,52 @@
+{
+  "name": "BehaviorReport",
+  "type": "object",
+  "properties": {
+    "reported_user_email": {
+      "type": "string",
+      "description": "Email of the reported user"
+    },
+    "reporter_email": {
+      "type": "string",
+      "description": "Email of the reporter"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "bullying",
+        "harassment",
+        "aggression",
+        "toxic_conduct",
+        "manipulation",
+        "spam",
+        "impersonation",
+        "other"
+      ],
+      "description": "Report category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Details of the report"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "resolved",
+        "dismissed"
+      ],
+      "description": "Report status"
+    },
+    "post_id": {
+      "type": "string",
+      "description": "Related post ID if applicable"
+    }
+  },
+  "required": [
+    "reported_user_email",
+    "reporter_email",
+    "category",
+    "description"
+  ]
+}
